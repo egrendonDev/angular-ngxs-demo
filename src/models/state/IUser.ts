@@ -1,6 +1,6 @@
-// User.ts
+// IUser.ts
 
-export interface User {
+export interface IUser {
     name: string;
     email: string;
 }

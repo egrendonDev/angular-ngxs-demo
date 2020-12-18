@@ -10,6 +10,7 @@ import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserState } from '../state/user.state';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { UserState } from '../state/user.state';
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
-    //NgxsStoragePluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(), // THis PLug what stores into local storage
     ReactiveFormsModule
   ],
   providers: [],

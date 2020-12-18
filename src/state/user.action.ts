@@ -1,9 +1,9 @@
 // user.action.ts
 
-import { User } from '../models/state/User';
+import { IUser } from '../models/state/IUser';
 
 export class AddUser {
-    static readonly type = '[User] Add';
+    static readonly type = '[IUser] Add';
 
-    constructor(public payload: User) {}
+    constructor(public payload: IUser) {}
 }

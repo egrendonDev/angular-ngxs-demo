@@ -1,11 +1,12 @@
 
 
 import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';
-import { User } from '../models/state/User';
+import { IUser } from '../models/state/IUser';
 import { AddUser } from './user.action';
 
 export class UserStateModel {
-    users: User[];
+    constructor(public users: IUser[]) {
+    }
 }
 
 @State<UserStateModel>({
@@ -14,16 +15,15 @@ export class UserStateModel {
         users: []
     }
 })
-export class UserState implements NgxsOnInit {
+export class UserState {
 
     @Selector()
-    static getUsers(state: UserStateModel): User[] {
+    static getUsers(state: UserStateModel): IUser[] {
         return state.users;
     }
 
     @Action(AddUser)
-    add({getState, patchState }: StateContext<UserStateModel>, { payload }: AddUser) {
-        debugger;
+    add({getState, patchState }: StateContext<UserStateModel>, { payload }: AddUser): void {
         const state = getState();
         patchState({
             users: [...state.users, payload]
