@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IUser } from '../../../models/state/IUser';
+import { IUser } from '../../models/state/IUser';
 import { Store } from '@ngxs/store';
 
 @Component({

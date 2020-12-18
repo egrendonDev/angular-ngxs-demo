@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AddUser } from '../../../state/user.action';
+import { AddUser } from '../../state/user.action';
 import { Store } from '@ngxs/store';
 
 @Component({

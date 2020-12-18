@@ -9,7 +9,7 @@ import { NgxsModule } from '@ngxs/store';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserState } from '../state/user.state';
+import { UserState } from './state/user.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
