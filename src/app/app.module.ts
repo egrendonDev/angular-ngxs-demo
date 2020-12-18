@@ -8,6 +8,8 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserState } from '../state/user.state';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,13 @@ import { IndexComponent } from './components/index/index.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot(),
+    NgxsModule.forRoot([
+      UserState
+    ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot(),
+    //NgxsStoragePluginModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
