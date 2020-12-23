@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AddUser } from '../../state/user.actions';
+import { AddUserAction } from '../../state/user.actions';
 import { Store } from '@ngxs/store';
 
 @Component({
@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
 
   public addUser(name: string, email: string): void {
     console.log(name, email);
-    this.store.dispatch(new AddUser({ name, email}));
+    this.store.dispatch(new AddUserAction({ name, email}));
   }
 
   public ngOnInit(): void {

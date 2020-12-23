@@ -2,7 +2,7 @@
 
 import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';
 import { IUser } from '../models/state/IUser';
-import { AddUser } from './user.actions';
+import { AddUserAction } from './user.actions';
 
 export class UserStateModel {
     constructor(public users: IUser[]) {
@@ -22,8 +22,8 @@ export class UserState {
         return state.users;
     }
 
-    @Action(AddUser)
-    add({getState, patchState }: StateContext<UserStateModel>, { payload }: AddUser): void {
+    @Action(AddUserAction)
+    add({getState, patchState }: StateContext<UserStateModel>, { payload }: AddUserAction): void {
         const state = getState();
         patchState({
             users: [...state.users, payload]

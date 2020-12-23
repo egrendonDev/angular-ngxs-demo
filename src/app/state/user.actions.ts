@@ -2,7 +2,7 @@
 
 import { IUser } from '../models/state/IUser';
 
-export class AddUser {
+export class AddUserAction {
     static readonly type = '[IUser] Add';
 
     constructor(public payload: IUser) {}
