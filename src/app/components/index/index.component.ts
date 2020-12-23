@@ -9,10 +9,11 @@ import { Store } from '@ngxs/store';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  public users: Observable<IUser[]>;
+
+  public users$: Observable<IUser[]>;
 
   constructor(private store: Store) {
-    this.users = this.store.select(state => state.users.users);
+    this.users$ = this.store.select(state => state.users.users);
   }
 
   ngOnInit(): void {

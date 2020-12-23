@@ -1,4 +1,4 @@
-// user.action.ts
+// user.actions.ts
 
 import { IUser } from '../models/state/IUser';
 
