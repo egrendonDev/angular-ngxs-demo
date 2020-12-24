@@ -9,25 +9,29 @@ import { NgxsModule } from '@ngxs/store';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserState } from './state/user.state';
+import { UserState } from './state/user-state.model';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { CourseModule } from './components/course.module';
+import { CourseState } from './state/course.state';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
-    IndexComponent
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxsModule.forRoot([
-      UserState
+      UserState,
+      CourseState,
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(), // THis PLug what stores into local storage
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CourseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
