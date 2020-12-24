@@ -4,8 +4,6 @@ import { State, Action, StateContext, Selector, NgxsOnInit, StateToken } from '@
 import { IUser } from '../interfaces/state/user-state.interface';
 import { AddUserAction, DeleteUserAction, UpdateUserAction } from './user.actions';
 import { Injectable } from '@angular/core';
-import { DeleteCourseAction, UpdateCourseAction } from './course.actions';
-import { CourseStateModel } from './course.state';
 
 const USERS_STATE_TOKEN = new StateToken<UserStateModel>('users');
 
@@ -54,7 +52,7 @@ export class UserState {
         });
     }
 
-    @Action(UpdateCourseAction)
+    @Action(UpdateUserAction)
     updateCourse({getState, setState}: StateContext<UserStateModel>, {payload, id}: UpdateUserAction): void {
 
         const state = getState();

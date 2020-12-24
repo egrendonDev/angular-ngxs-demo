@@ -18,3 +18,33 @@
         </tbody>
     </table>
 </div>
+
+
+<div *ngIf="isUpdateActivated && selectedItem" style="margin-top: 50px; margin-left: 50px;">
+    <h4>Update Course</h4>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+        <div class="form-group">
+            <label for="name">Course Name</label>
+            <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    required
+                    [(ngModel)]="selectedItem.name"
+                    style="width: 400px"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    required
+                    [(ngModel)]="selectedItem.email"
+                    style="width: 400px"/>
+        </div>
+        <button [disabled]="updateForm.invalid" class="btn btn-primary" type="submit">Update</button>
+    </form>
+</div>
