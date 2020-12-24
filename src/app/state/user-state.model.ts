@@ -1,7 +1,7 @@
 
 
 import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';
-import { IUser } from '../interfaces/state/IUser';
+import { IUser } from '../interfaces/state/user-state-interface';
 import { AddUserAction } from './user.actions';
 import { Injectable } from '@angular/core';
 

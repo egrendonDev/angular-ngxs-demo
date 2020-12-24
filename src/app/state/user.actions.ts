@@ -1,6 +1,8 @@
 // user.actions.ts
 
-import { IUser } from '../interfaces/state/IUser';
+
+
+import { IUser } from '../interfaces/state/user-state-interface';
 
 export class AddUserAction {
     static readonly type = '[IUser] Add';
