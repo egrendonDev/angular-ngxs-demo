@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { UserState } from './state/user-state.model';
+import { UserState } from './state/user-state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { PagesModule } from './components/pages.module';
 import { CourseState } from './state/course.state';
