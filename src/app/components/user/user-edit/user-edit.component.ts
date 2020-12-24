@@ -5,6 +5,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddUserAction } from '../../../state/user.actions';
 import { Store } from '@ngxs/store';
 import { Router } from '@angular/router';
+import { IUser } from '../../../interfaces/state/user-state.interface';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-create',
@@ -31,7 +33,8 @@ export class UserEditComponent implements OnInit {
 
   public addUser(name: string, email: string): void {
     console.log(name, email);
-    this.store.dispatch(new AddUserAction({ name, email}));
+    const user: IUser = { name, email, id: uuidv4()};
+    this.store.dispatch(new AddUserAction(user));
 
     // have to do ngZone for this step....
     this.ngZone.run(() => this.router.navigateByUrl('/users'));
