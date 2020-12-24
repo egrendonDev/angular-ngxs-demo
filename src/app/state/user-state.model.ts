@@ -1,9 +1,11 @@
 
 
-import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';
+import { State, Action, StateContext, Selector, NgxsOnInit, StateToken } from '@ngxs/store';
 import { IUser } from '../interfaces/state/user-state.interface';
 import { AddUserAction } from './user.actions';
 import { Injectable } from '@angular/core';
+
+const USERS_STATE_TOKEN = new StateToken<UserStateModel>('users');
 
 export class UserStateModel {
     constructor(public users: IUser[]) {
@@ -11,11 +13,12 @@ export class UserStateModel {
 }
 
 @State<UserStateModel>({
-    name: 'users',
+    name: USERS_STATE_TOKEN,
     defaults: {
         users: []
     }
 })
+
 @Injectable()
 export class UserState {
 
@@ -26,7 +29,7 @@ export class UserState {
         // empty for now
     }
 
-    @Selector()
+    @Selector([USERS_STATE_TOKEN])
     static getUsers(state: UserStateModel): IUser[] {
         return state.users;
     }

@@ -1,9 +1,11 @@
-import { State, Action, StateContext, Selector } from '@ngxs/store';
+import { State, Action, StateContext, Selector, StateToken } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ICourse } from '../interfaces/state/course-state.interface';
 import { AddCourseAction, UpdateCourseAction, GetCoursesAction, DeleteCourseAction } from './course.actions';
 import { Injectable } from '@angular/core';
+
+const COURSES_STATE_TOKEN = new StateToken<CourseStateModel>('courses');
 
 export class CourseStateModel {
     courses: ICourse[] = [];
@@ -11,24 +13,26 @@ export class CourseStateModel {
 }
 
 @State<CourseStateModel>({
-    name: 'courses',
+    name: COURSES_STATE_TOKEN,
     defaults: {
       courses: [],
       areCoursesLoaded: false
     }
 })
+
 @Injectable()
 export class CourseState {
 
     constructor() {
     }
 
-    @Selector()
+
+    @Selector([COURSES_STATE_TOKEN]) // if you specify the wrong state type, will be a compilation error
     static getCoursesList(state: CourseStateModel): ICourse[] {
         return state.courses;
     }
 
-    @Selector()
+    @Selector([COURSES_STATE_TOKEN])
     static areCoursesLoaded(state: CourseStateModel): boolean {
         return state.areCoursesLoaded;
     }
