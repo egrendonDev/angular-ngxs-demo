@@ -1,4 +1,4 @@
-// create.component.ts
+// user-edit.component.ts
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -7,10 +7,10 @@ import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.scss']
 })
-export class CreateComponent implements OnInit {
+export class UserEditComponent implements OnInit {
 
   public angForm: FormGroup | undefined;
 

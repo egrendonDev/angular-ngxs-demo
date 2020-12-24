@@ -5,10 +5,10 @@ import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
-export class IndexComponent implements OnInit {
+export class UserListComponent implements OnInit {
 
   public users$: Observable<IUser[]>;
 
