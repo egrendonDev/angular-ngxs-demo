@@ -8,9 +8,9 @@ import { AddCourseAction } from '../../../state/course.actions';
 
 @Component({
   selector: 'app-create-course',
-  templateUrl: './create-course.component.html'
+  templateUrl: './course-edit.component.html'
 })
-export class CreateCourseComponent implements OnInit {
+export class CourseEditComponent implements OnInit {
 
 
   constructor(private store: Store, private router: Router, private ngZone: NgZone) { }
