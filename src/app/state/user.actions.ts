@@ -2,7 +2,7 @@
 
 
 
-import { IUser } from '../interfaces/state/user-state-interface';
+import { IUser } from '../interfaces/state/user-state.interface';
 
 export class AddUserAction {
     static readonly type = '[IUser] Add';
