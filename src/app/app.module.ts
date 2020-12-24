@@ -6,17 +6,26 @@ import { AppComponent } from './app.component';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
+import { UserState } from './state/user-state.model';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { PagesModule } from './components/pages.module';
+import { CourseState } from './state/course.state';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot(),
+    NgxsModule.forRoot([
+      UserState,
+      CourseState,
+    ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(), // THis PLug what stores into local storage
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

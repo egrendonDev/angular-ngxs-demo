@@ -21,9 +21,13 @@
     "@angular/router": "~11.0.0",
     "@ngxs/devtools-plugin": "^3.7.1",
     "@ngxs/logger-plugin": "^3.7.1",
+    "@ngxs/storage-plugin": "^3.7.1",
     "@ngxs/store": "^3.7.1",
+    "@types/uuid": "^8.3.0",
+    "bootstrap": "^4.5.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
