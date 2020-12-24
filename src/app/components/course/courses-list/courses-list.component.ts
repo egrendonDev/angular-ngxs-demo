@@ -2,9 +2,9 @@ import { takeUntil, tap } from 'rxjs/operators';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subject, Subscription } from 'rxjs';
-import { CourseState } from '../../state/course.state';
-import { ICourse } from '../../models/state/course.model';
-import { DeleteCourseAction, GetCoursesAction, UpdateCourseAction } from '../../state/course.actions';
+import { CourseState } from '../../../state/course.state';
+import { ICourse } from '../../../interfaces/state/course-state.interface';
+import { DeleteCourseAction, GetCoursesAction, UpdateCourseAction } from '../../../state/course.actions';
 import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({

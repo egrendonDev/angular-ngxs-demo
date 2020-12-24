@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { CreateComponent } from './components/create/create.component';
-import { IndexComponent } from './components/index/index.component';
+import { CreateComponent } from './components/course/create/create.component';
+import { IndexComponent } from './components/deleteMe/index/index.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserState } from './state/user-state.model';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { CourseModule } from './components/course.module';
+import { CourseModule } from './components/course/course.module';
 import { CourseState } from './state/course.state';
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { ICourse } from '../models/state/course.model';
+import { ICourse } from '../interfaces/state/course-state.interface';
 import { AddCourseAction, UpdateCourseAction, GetCoursesAction, DeleteCourseAction } from './course.actions';
 import { Injectable } from '@angular/core';
 

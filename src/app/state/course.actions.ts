@@ -1,4 +1,4 @@
-import { ICourse } from '../models/state/course.model';
+import { ICourse } from '../interfaces/state/course-state.interface';
 
 
 export class AddCourseAction {

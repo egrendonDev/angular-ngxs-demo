@@ -3,8 +3,8 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { Store } from '@ngxs/store';
 import { Router } from '@angular/router';
-import { ICourse } from '../../models/state/course.model';
-import { AddCourseAction } from '../../state/course.actions';
+import { ICourse } from '../../../interfaces/state/course-state.interface';
+import { AddCourseAction } from '../../../state/course.actions';
 
 @Component({
   selector: 'app-create-course',
