@@ -10,6 +10,7 @@ import { UserState } from './state/user-state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { PagesModule } from './components/pages.module';
 import { CourseState } from './state/course.state';
+import { NGX_STATES } from './state/state.index';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,7 @@ import { CourseState } from './state/course.state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([
-      UserState,
-      CourseState,
-    ]),
+    NgxsModule.forRoot(...[NGX_STATES]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(), // THis PLug what stores into local storage
