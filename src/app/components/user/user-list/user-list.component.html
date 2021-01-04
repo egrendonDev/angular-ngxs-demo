@@ -21,10 +21,10 @@
 
 
 <div *ngIf="isUpdateActivated && selectedItem" style="margin-top: 50px; margin-left: 50px;">
-    <h4>Update Course</h4>
+    <h4>Update User</h4>
     <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
         <div class="form-group">
-            <label for="name">Course Name</label>
+            <label for="name">User Name</label>
             <input
                     type="text"
                     id="name"

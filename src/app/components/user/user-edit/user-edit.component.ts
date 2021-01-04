@@ -24,6 +24,9 @@ export class UserEditComponent implements OnInit {
     this.createForm();
   }
 
+  public ngOnInit(): void {
+  }
+
   public createForm(): void  {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
@@ -38,9 +41,6 @@ export class UserEditComponent implements OnInit {
 
     // have to do ngZone for this step....
     this.ngZone.run(() => this.router.navigateByUrl('/users'));
-  }
-
-  public ngOnInit(): void {
   }
 
 }
