@@ -4,12 +4,14 @@ import { CoursesListComponent } from './components/course/courses-list/courses-l
 import { CourseEditComponent } from './components/course/course-edit/course-edit.component';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { CounterEditComponent } from './components/counter/counter-edit.component';
 
 const routes = [
   { path: 'courses', component: CoursesListComponent},
   {path: 'course-edit', component: CourseEditComponent},
   {path: 'users', component: UserListComponent},
   {path: 'create-user', component: UserEditComponent},
+  {path: 'counter-edit', component: CounterEditComponent},
   {path: '**', redirectTo: 'courses'}
 ];
 

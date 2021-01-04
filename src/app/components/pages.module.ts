@@ -6,8 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { CounterEditComponent } from './counter/counter-edit.component';
 
-const components = [CoursesListComponent, CourseEditComponent, UserEditComponent, UserListComponent];
+const components = [CoursesListComponent, CourseEditComponent, UserEditComponent, UserListComponent, CounterEditComponent];
 
 @NgModule({
   declarations: [...components],
