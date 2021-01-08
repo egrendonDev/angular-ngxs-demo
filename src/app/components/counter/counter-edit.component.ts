@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CounterState, Decrement, Increment } from '../../state/counter.state';
+import { CounterState } from '../../state/counter.state';
 import { Select, Store } from '@ngxs/store';
 
 @Component({
@@ -10,20 +10,22 @@ import { Select, Store } from '@ngxs/store';
 })
 export class CounterEditComponent implements OnInit {
 
-  @Select(CounterState) counter$: Observable<number>;
+  // @Select(CounterState) counter$: Observable<number>;
 
-  constructor(private store: Store) { }
+  constructor(public counter: CounterState) { }
 
   ngOnInit(): void {
   }
 
 
   increment(): void {
-    this.store.dispatch(new Increment());
+    // this.counter.dispatch(new Increment());
+    this.counter.increment();
   }
 
   decrement(): void {
-    this.store.dispatch(new Decrement());
+    // this.counter.dispatch(new Decrement());
+    this.counter.decrement();
   }
 
 }

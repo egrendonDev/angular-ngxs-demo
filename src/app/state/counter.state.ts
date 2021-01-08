@@ -1,25 +1,20 @@
-import { State, Action, StateContext } from '@ngxs/store';
+import { State } from '@ngxs/store';
+import { DataAction, StateRepository } from '@ngxs-labs/data/decorators';
+import { NgxsDataRepository } from '@ngxs-labs/data/repositories';
+import { Injectable } from '@angular/core';
 
-export class Increment {
-    static readonly type = '[Counter] Increment';
-}
-
-export class Decrement {
-    static readonly type = '[Counter] Decrement';
-}
-
+@StateRepository()
 @State<number>({
     name: 'counter',
     defaults: 0
 })
-export class CounterState {
-    @Action(Increment)
-    increment(ctx: StateContext<number>): void {
-        ctx.setState(ctx.getState() + 1);
+@Injectable()
+export class CounterState extends NgxsDataRepository<number> {
+    @DataAction() increment(): void {
+        this.ctx.setState((state: number) => ++state);
     }
 
-    @Action(Decrement)
-    decrement(ctx: StateContext<number>): void {
-        ctx.setState(ctx.getState() - 1);
+    @DataAction() decrement(): void {
+        this.ctx.setState((state: number) => --state);
     }
 }

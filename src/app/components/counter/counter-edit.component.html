@@ -1,6 +1,8 @@
-<ng-container *ngIf="counter$ | async as counter">
+<!--<ng-container *ngIf="counter$ | async as counter">
     <h1>{{ counter }}</h1>
-</ng-container>
+</ng-container>-->
+
+<h1>{{ counter.snapshot }}</h1>
 
 <button (click)="increment()">Increment</button>
 <button (click)="decrement()">Decrement</button>
