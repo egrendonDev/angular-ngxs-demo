@@ -12,6 +12,7 @@ import { PagesModule } from './components/pages.module';
 import { CourseState } from './state/course.state';
 import { NGX_STATES } from './state/state.index';
 import { NgxsDataPluginModule } from '@ngxs-labs/data';
+import { NGXS_DATA_STORAGE_PLUGIN, NGXS_DATA_STORAGE_PREFIX_TOKEN } from '@ngxs-labs/data/storage';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,12 @@ import { NgxsDataPluginModule } from '@ngxs-labs/data';
     AppRoutingModule,
     NgxsModule.forRoot(...[NGX_STATES]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsDataPluginModule.forRoot(),
+    NgxsDataPluginModule.forRoot([NGXS_DATA_STORAGE_PLUGIN]),
     NgxsLoggerPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(), // THis PLug what stores into local storage
     PagesModule,
   ],
-  providers: [],
+  providers: [{ provide: NGXS_DATA_STORAGE_PREFIX_TOKEN, useValue: '@myCompany.store.' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

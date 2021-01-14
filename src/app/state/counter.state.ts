@@ -1,8 +1,11 @@
 import { State } from '@ngxs/store';
-import { DataAction, StateRepository } from '@ngxs-labs/data/decorators';
+import { DataAction, Persistence, StateRepository } from '@ngxs-labs/data/decorators';
 import { NgxsDataRepository } from '@ngxs-labs/data/repositories';
 import { Injectable } from '@angular/core';
 
+// state with migration strategy
+// state with migration strategy
+@Persistence()
 @StateRepository()
 @State<number>({
     name: 'counter',

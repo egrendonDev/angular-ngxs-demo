@@ -15,6 +15,9 @@ export class CounterEditComponent implements OnInit {
   constructor(public counter: CounterState) { }
 
   ngOnInit(): void {
+    this.counter.state$.subscribe(x => {
+      console.log('XXXXXXXXXXXXXXX STATE CHANGED XXXXXXXXXXXXXXXXXXXXXXXXX', x);
+    });
   }
 
 
